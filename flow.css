@@ -1,0 +1,37 @@
+﻿.label-flow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.main-flow {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+}
+
+.main-flow__margin {
+    flex: 0 1000 50vw;
+}
+
+.main-flow__central {
+    flex: 0 1 52rem;
+}
+
+.central-flow {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+.central-flow__column {
+    flex: 1 1 10rem;
+}
+
+.central-flow__page {
+    flex: 10 1 50vh;
+    min-height: 95%;
+    overflow: visible;
+}
