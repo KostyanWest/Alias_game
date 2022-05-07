@@ -1,7 +1,21 @@
 ﻿html, body {
     margin: 0px;
     min-height: 100vh;
+    font-size: 2vh;
 }
+
+/*@media (min-resolution: 250dpi) {
+    html {
+        font-size: 32px;
+    }
+}
+
+@media (min-resolution: 400dpi) {
+    html {
+        font-size: 48px;
+    }
+}*/
+
 
 .hidden {
     display: none !important;

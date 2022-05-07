@@ -59,12 +59,12 @@
             <span>Alias Game</span>
             <div>
                 <picture id="light_theme_button" class="color-theme-btn" onclick="themeSwitch('light')">
-                    <source class="color-theme-button" srcset="images/sun_icon_light.svg" type="image/svg+xml" />
-                    <img class="color-theme-button" src="image/sun_icon_light.png" alt="Switch to light mode" />
-                </picture>
-                <picture id="dark_theme_button" class="color-theme-btn hidden" onclick="themeSwitch('dark')">
                     <source class="color-theme-button" srcset="images/moon_icon_light.svg" type="image/svg+xml" />
                     <img class="color-theme-button" src="image/moon_icon_light.png" alt="Switch to light mode" />
+                </picture>
+                <picture id="dark_theme_button" class="color-theme-btn hidden" onclick="themeSwitch('dark')">
+                    <source class="color-theme-button" srcset="images/sun_icon_light.svg" type="image/svg+xml" />
+                    <img class="color-theme-button" src="image/sun_icon_light.png" alt="Switch to dark mode" />
                 </picture>
             </div>
         </header>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
-                                    <label class="rules-page-item__label" for="penalty_per_word_range">Награда за угадывание:</label>
+                                    <label class="rules-page-item__label" for="penalty_per_word_range">Штраф за пропуск:</label>
                                     <output class="rules-page-item__number" for="penalty_per_word_range">1</output>
                                 </div>
                                 <input id="penalty_per_word_range" class="rules-page-item__range" type="range" min="0" max="5" step="1" value="1" />

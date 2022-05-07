@@ -32,6 +32,6 @@
 
 .central-flow__page {
     flex: 10 1 30rem;
-    min-height: 95%;
+    min-height: 88%;
     overflow: visible;
 }

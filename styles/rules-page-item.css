@@ -9,10 +9,9 @@
 
 .rules-page-item__number {
     font-size: 1.8rem;
-    margin: 0em 2em;
+    margin: 0em 1em;
 }
 
 .rules-page-item__range {
-    margin: 2em 1em;
-    height: 1em;
+    margin: 3em 1em;
 }
