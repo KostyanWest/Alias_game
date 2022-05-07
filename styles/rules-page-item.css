@@ -1,0 +1,18 @@
+.rules-page-item {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.rules-page-item__label {
+    font-size: 1.5rem;
+}
+
+.rules-page-item__number {
+    font-size: 1.8rem;
+    margin: 0em 2em;
+}
+
+.rules-page-item__range {
+    margin: 2em 1em;
+    height: 1em;
+}

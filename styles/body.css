@@ -1,0 +1,46 @@
+.body {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.body_viewport {
+    background-color: var(--background-color-viewport);
+}
+
+.body__header {
+    flex: 0 0 auto;
+    padding: 0.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body__header_viewport {
+    border-bottom: 2px solid var(--text-color);
+    background-color: var(--local-color);
+    color: var(--text-color-contrasted);
+    font-size: 2rem;
+}
+
+.body__header_page {
+    margin: 0.5em;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0em, 0.5em, 0em, 0.5em;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.body__main {
+    flex: 1 0 auto;
+}
+
+.body__footer {
+    flex: 0 0 auto;
+}
+
+.body__footer_viewport {
+    border-top: 2px solid var(--text-color);
+    height: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+}

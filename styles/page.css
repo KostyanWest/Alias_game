@@ -1,0 +1,30 @@
+﻿.page {
+    margin: 0em;
+    border-radius: 8px;
+    opacity: 1;
+    transition: all 200ms ease-out;
+}
+
+.page_play-area {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.page_hidden {
+    margin-left: 5rem;
+    margin-right: -5rem;
+    opacity: 0;
+    transition: opacity 80ms linear, margin 0ms linear 80ms;
+}
+
+.page-list {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.page-list__item {
+    margin: 0.5em;
+    padding: 0em, 0.5em;
+    border-bottom: 1px solid var(--text-color);
+}
