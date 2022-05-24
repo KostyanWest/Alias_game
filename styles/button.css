@@ -41,7 +41,7 @@
 }
 
 /*The buttons' reverse order and the nav-bar's reverse flex-flow are
-            a workaround to squeeze out the "play" button in the "1 above 3" case*/
+  a workaround to squeeze out the "play" button in the "1 above 3" case*/
 .nav-bar {
     display: flex;
     flex-flow: row-reverse wrap-reverse;
@@ -50,7 +50,7 @@
     align-content: flex-start;
     margin: 0.2em;
     border: 2px solid var(--local-color);
-    border-radius: 10px;
+    border-radius: 0.5em;
 }
 
 .nav-bar__item {

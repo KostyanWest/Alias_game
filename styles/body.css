@@ -11,12 +11,12 @@
 
 .body__header {
     flex: 0 0 auto;
-    padding: 0.2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .body__header_viewport {
     border-bottom: 2px solid var(--text-color);
+    padding: 0.2em;
     background-color: var(--local-color);
     color: var(--text-color-contrasted);
     font-size: 2rem;

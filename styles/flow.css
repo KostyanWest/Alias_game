@@ -13,7 +13,7 @@
 }
 
 .main-flow__margin {
-    flex: 0 1000 50vw;
+    flex: 0 1000 50%;
 }
 
 .main-flow__central {
@@ -32,6 +32,5 @@
 
 .central-flow__page {
     flex: 10 1 30rem;
-    min-height: 88%;
     overflow: visible;
 }
