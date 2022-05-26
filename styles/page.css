@@ -1,0 +1,28 @@
+﻿.page {
+    border-radius: 1em;
+    opacity: 1;
+    /*transition: all 200ms ease-out;*/
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.page_play-area {
+    height: 100%;
+    user-select: none;
+}
+
+.page_hidden {
+    opacity: 0;
+    transform: translate(5rem, 0px);
+    transition: opacity 80ms linear, transform 0ms linear 80ms;
+}
+
+.page-list {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.page-list__item {
+    margin: 0.5em;
+    padding: 0em 0.5em;
+    border-bottom: 1px solid var(--text-color);
+}

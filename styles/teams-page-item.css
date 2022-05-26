@@ -1,0 +1,43 @@
+﻿.teams-page-item {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.teams-page-item__content {
+    flex: 1000 1 65%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.teams-page-item__buttons {
+    flex: 1 0 6rem;
+}
+
+.teams-page-item__label {
+    font-size: 1.30rem;
+}
+
+.teams-page-item__text {
+    margin: 0.2em;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: var(--secondary-color);
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+    .teams-page-item__text:invalid {
+        border-color: var(--primary-color);
+    }
+
+.teams-page-item__button {
+    width: 6rem;
+    margin: 0.3em;
+    border: 1px solid var(--local-color);
+    border-radius: 8px;
+    font-size: 1.2rem;
+}

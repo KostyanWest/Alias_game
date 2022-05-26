@@ -1,0 +1,62 @@
+﻿.button {
+    padding: 0.4em;
+    text-align: center;
+    color: var(--text-color);
+    background-image: linear-gradient(-45deg, var(--background-color) 40%, var(--local-color) 50%, var(--background-color) 60%);
+    background-position: 0%;
+    background-size: 320%;
+    cursor: pointer;
+    transition: padding 200ms linear;
+}
+
+    .button:hover {
+        background-image: linear-gradient(-45deg, var(--background-color) 40%, var(--local-color) 50%, var(--background-color) 60%);
+        background-position: 100%;
+        padding-left: 0.2em;
+        padding-right: 0.6em;
+        transition: all 200ms linear;
+    }
+
+    .button:active {
+        background-position: 0%;
+        transition: none;
+    }
+
+    .button:disabled {
+        background-image: linear-gradient(-45deg, var(--local-color) 50%, var(--background-color) 50%);
+        background-position: 100%;
+        padding: 0.4em;
+        color: var(--text-color-contrasted);
+        cursor: default;
+        transition: all 200ms linear;
+    }
+
+.color-theme-button {
+    height: 3rem;
+    cursor: pointer;
+}
+
+.link-button {
+    height: 2rem;
+}
+
+/*The buttons' reverse order and the nav-bar's reverse flex-flow are
+  a workaround to squeeze out the "play" button in the "1 above 3" case*/
+.nav-bar {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 0.2em;
+    border: 2px solid var(--local-color);
+    border-radius: 0.5em;
+}
+
+.nav-bar__item {
+    flex: 1 1 8rem;
+    border: inherit;
+    border-width: 0px 1px 1px 0px;
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
