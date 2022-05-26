@@ -22,21 +22,19 @@
     text-align: center;
     color: var(--text-color);
     opacity: 1;
-    transition: all 200ms ease-out;
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 
 .round-page__hint_hidden_get {
-    margin-top: 2.5em;
-    margin-bottom: -1.5em;
     opacity: 0;
-    transition: opacity 100ms linear, margin 0s linear 100ms;
+    transform: translate(0px, 2em);
+    transition: opacity 100ms linear, transform 0s linear 100ms;
 }
 
 .round-page__hint_hidden_drop {
-    margin-top: -1.5em;
-    margin-bottom: 2.5em;
     opacity: 0;
-    transition: opacity 100ms linear, margin 0s linear 100ms;
+    transform: translate(0px, -2em);
+    transition: opacity 100ms linear, transform 0s linear 100ms;
 }
 
 .round-page__hint_excited {

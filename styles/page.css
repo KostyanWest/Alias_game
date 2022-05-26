@@ -1,8 +1,8 @@
 ﻿.page {
-    margin: 0em;
     border-radius: 1em;
     opacity: 1;
-    transition: all 200ms ease-out;
+    /*transition: all 200ms ease-out;*/
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 
 .page_play-area {
@@ -11,10 +11,9 @@
 }
 
 .page_hidden {
-    margin-left: 5rem;
-    margin-right: -5rem;
     opacity: 0;
-    transition: opacity 80ms linear, margin 0ms linear 80ms;
+    transform: translate(5rem, 0px);
+    transition: opacity 80ms linear, transform 0ms linear 80ms;
 }
 
 .page-list {
