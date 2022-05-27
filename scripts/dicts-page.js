@@ -30,8 +30,8 @@ class DictsPage {
             this.itemTemplate.tagContainer.appendChild(this.itemTemplate.tag.cloneNode(true));
         });
 
-        const cloneItem = this.itemTemplate.element.cloneNode(true);
-        cloneItem.querySelector(':scope .dicts-page-item__button').onclick = (event) => {
+        const cloneElement = this.itemTemplate.element.cloneNode(true);
+        cloneElement.querySelector(':scope button.dicts-page-item__button').onclick = (event) => {
             const currentButtonElement = event.currentTarget;
             currentButtonElement.disabled = true;
             currentButtonElement.textContent = 'Загрузка...';
@@ -54,7 +54,7 @@ class DictsPage {
             });
         }
         window.onerror = () => true;
-        this.element.appendChild(cloneItem);
+        this.element.appendChild(cloneElement);
     }
 
     removeAll() {

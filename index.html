@@ -6,6 +6,7 @@
     <title>Alias Game</title>
     <script src="scripts/theme.js"></script>
     <script src="scripts/nav-bar.js"></script>
+    <script src="scripts/teams-page.js"></script>
     <script src="scripts/rules-page.js"></script>
     <script src="scripts/dicts-page.js"></script>
     <link rel="stylesheet" href="styles/body.css" type="text/css" />
@@ -96,10 +97,10 @@
                         <div class="body__main page-list">
                             <div class="teams-page-item page-list__item">
                                 <div class="teams-page-item__content">
-                                    <label class="teams-page-item__label" for="teamNameTextElement0">Команда:</label>
-                                    <input id="teamNameTextElement0" class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" required />
+                                    <label class="teams-page-item__label">Команда:</label>
+                                    <input class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" required />
                                 </div>
-                                <div class="teams-page-item__buttons">
+                                <div class="teams-page-item__buttons hidden">
                                     <button class="button teams-page-item__button color-scheme__secondary">Вверх</button>
                                     <button class="button teams-page-item__button color-scheme__primary">Вниз</button>
                                 </div>
@@ -118,7 +119,7 @@
                                     <label class="rules-page-item__label" for="secondsPerRoundRangeElement">Секунд на раунд:</label>
                                     <output class="rules-page-item__number" for="secondsPerRoundRangeElement">60</output>
                                 </div>
-                                <input id="secondsPerRoundRangeElement" class="rules-page-item__range" type="range" min="1" max="120" step="1" value="60" />
+                                <input id="secondsPerRoundRangeElement" class="rules-page-item__range" type="range" min="10" max="120" step="1" value="60" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
