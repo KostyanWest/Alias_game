@@ -23,9 +23,9 @@
 }
 
 .body__header_page {
-    margin: 0.5em;
+    margin: 0.75rem;
     border-bottom: 2px solid var(--primary-color);
-    padding: 0em, 0.5em, 0em, 0.5em;
+    padding: 0em 0.5em 0em 0.5em;
     color: var(--text-color);
     font-size: 1.5rem;
 }
