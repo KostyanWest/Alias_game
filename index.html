@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="KostyanWest">
+    <title>Alias Game</title>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/nav-bar.js"></script>
     <link rel="stylesheet" href="styles/body.css" type="text/css" />
     <link rel="stylesheet" href="styles/button.css" type="text/css" />
     <link rel="stylesheet" href="styles/common.css" type="text/css" />
@@ -10,61 +13,22 @@
     <link rel="stylesheet" href="styles/page.css" type="text/css" />
     <link rel="stylesheet" href="styles/round-page.css" type="text/css" />
     <link rel="stylesheet" href="styles/round-page-deck.css" type="text/css" />
+    <link rel="stylesheet" href="styles/round-result-page-item.css" type="text/css" />
     <link rel="stylesheet" href="styles/teams-page-item.css" type="text/css" />
     <link rel="stylesheet" href="styles/rules-page-item.css" type="text/css" />
     <link rel="stylesheet" href="styles/dicts-page-item.css" type="text/css" />
-    <title>Alias Game</title>
-    <script>
-        let current_nav_btn = null;
-        const nav_map = new Map();
-
-        function navBtnClick(btn) {
-            let old_page = nav_map.get(current_nav_btn);
-            old_page.classList.add('page_hidden');
-
-            current_nav_btn.disabled = false;
-            current_nav_btn = btn;
-            btn.disabled = true;
-
-            setTimeout(() => {
-                old_page.classList.add('hidden');
-                if (current_nav_btn === btn) {
-                    let new_page = nav_map.get(btn);
-                    new_page.classList.remove('hidden');
-                    setTimeout(() => { new_page.classList.remove('page_hidden'); }, 20);
-                }
-            }, 100);
-        }
-
-        function themeSwitch(theme) {
-            if (theme == 'light') {
-                document.querySelector('.body_viewport').classList.remove('color-scheme_dark');
-                document.getElementById('light_theme_button').classList.add('hidden');
-                document.getElementById('dark_theme_button').classList.remove('hidden');
-                document.getElementById('github_logo_light').classList.add('hidden');
-                document.getElementById('github_logo_dark').classList.remove('hidden');
-            }
-            else {
-                document.querySelector('.body_viewport').classList.add('color-scheme_dark');
-                document.getElementById('dark_theme_button').classList.add('hidden');
-                document.getElementById('light_theme_button').classList.remove('hidden');
-                document.getElementById('github_logo_dark').classList.add('hidden');
-                document.getElementById('github_logo_light').classList.remove('hidden');
-            }
-        }
-    </script>
 </head>
     <body class="body body_viewport color-scheme color-scheme_dark">       
         <header class="label-flow body__header body__header_viewport">
             <span>Alias Game</span>
             <div>
-                <picture id="light_theme_button" class="color-theme-btn" onclick="themeSwitch('light')">
+                <picture id="lightThemeButtonElement" class="color-theme-btn">
+                    <source class="color-theme-button" srcset="images/sun_icon_light.svg" type="image/svg+xml" />
+                    <img class="color-theme-button" src="image/sun_icon_light.png" alt="Switch to light mode" />
+                </picture>
+                <picture id="darkThemeButtonElement" class="color-theme-btn hidden">
                     <source class="color-theme-button" srcset="images/moon_icon_light.svg" type="image/svg+xml" />
                     <img class="color-theme-button" src="image/moon_icon_light.png" alt="Switch to light mode" />
-                </picture>
-                <picture id="dark_theme_button" class="color-theme-btn hidden" onclick="themeSwitch('dark')">
-                    <source class="color-theme-button" srcset="images/sun_icon_light.svg" type="image/svg+xml" />
-                    <img class="color-theme-button" src="image/sun_icon_light.png" alt="Switch to dark mode" />
                 </picture>
             </div>
         </header>
@@ -76,143 +40,121 @@
                     <!-- The buttons' reverse order and the nav-bar's reverse flex-flow are
     a workaround to squeeze out the "play" button in the "1 above 3" case -->
                     <nav class="nav-bar color-scheme__primary">
-                        <button id="nav_btn_dicts" class="button nav-bar__item" onclick="navBtnClick(this)">Словари</button>
-                        <button id="nav_btn_settings" class="button nav-bar__item" onclick="navBtnClick(this)">Правила</button>
-                        <button id="nav_btn_teams" class="button nav-bar__item" onclick="navBtnClick(this)">Команды</button>
-                        <button id="nav_btn_play" class="button nav-bar__item" onclick="navBtnClick(this)" disabled>Играть</button>
+                        <button id="navDictsButtonElement" class="button nav-bar__item">Словари</button>
+                        <button id="navRulesButtonElement" class="button nav-bar__item">Правила</button>
+                        <button id="navTeamsButtonElement" class="button nav-bar__item">Команды</button>
+                        <button id="navPlayButtonElement" class="button nav-bar__item" disabled>Играть</button>
                     </nav>
                 </div>
                 <div class="central-flow__page">
 
-                    <section id="round_page" class="body page page_play-area">
+                    <section id="roundPageElement" class="body page page_play-area">
                         <header class="label-flow body__header body__header_page">
                             <span>Команда 1</span>
                             <span>Раунд 1</span>
                         </header>
                         <div class="body__main round-page">
-                            <div id="game_timer" class="round-page__timer">
-                                <span id="game_timer_min">0</span>
+                            <div class="round-page__timer">
+                                <span>0</span>
                                 <span>:</span>
-                                <span id="game_timer_sec">10</span>
+                                <span>0</span>
                             </div>
-                            <span id="game_hint_get" class="round-page__hint">Потяни вверх, чтобы начать</span>
-                            <span id="game_counter_get" class="round-page__counter round-page__counter_type_get">+0</span>
-                            <div id="game_deck" class="round-page-deck">
-                                <span class="round-page-deck__card round-page-deck__card_grabbable">Слово</span>
+                            <span class="round-page__hint round-page__hint_hidden_get">Потяни вверх, чтобы начать</span>
+                            <span class="round-page__counter round-page__counter_type_get">+0</span>
+                            <div class="round-page-deck">
+                                <span class="round-page-deck__card hidden">? ? ?</span>
                             </div>
-                            <span id="game_counter_drop" class="round-page__counter round-page__counter_type_drop">-0</span>
-                            <span id="game_hint_drop" class="round-page__hint">Потяни вниз, чтобы начать</span>
+                            <span class="round-page__counter round-page__counter_type_drop">-0</span>
+                            <span class="round-page__hint round-page__hint_hidden_drop">Потяни вверх, чтобы начать</span>
                         </div>
                     </section>
 
-                    <section id="teams_page" class="body page page_hidden hidden">
+                    <!-- Страница промежуточных результатов -->
+                    <section id="roundResultPageElement" class="body page page_hidden hidden">
+                        <header class="label-flow body__header body__header_page">
+                            <span>Кукареки</span>
+                            <span>Раунд 1</span>
+                        </header>
+                        <div class="body__main page-list">
+                            <div class="label-flow page-list__item round-result-page-item hidden">
+                                <span class="round-result-page-item__word">Слово</span>
+                                <div>
+                                    <button class="button round-result-page-item__button color-scheme__secondary">&#10003;</button>
+                                    <button class="button round-result-page-item__button color-scheme__primary">&#10006;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Страница команд -->
+                    <section id="teamsPageElement" class="body page page_hidden hidden">
                         <header class="label-flow body__header body__header_page">
                             <span>Команды</span>
                         </header>
                         <div class="body__main page-list">
                             <div class="teams-page-item page-list__item">
                                 <div class="teams-page-item__content">
-                                    <label class="teams-page-item__label" for="team_name_range_1">Команда:</label>
-                                    <input id="team_name_range_1" class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" value="Команда 1" required />
+                                    <label class="teams-page-item__label" for="teamNameTextElement0">Команда:</label>
+                                    <input id="teamNameTextElement0" class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" required />
                                 </div>
                                 <div class="teams-page-item__buttons">
                                     <button class="button teams-page-item__button color-scheme__secondary">Вверх</button>
                                     <button class="button teams-page-item__button color-scheme__primary">Вниз</button>
                                 </div>
                             </div>
-                            <div class="teams-page-item page-list__item">
-                                <div class="teams-page-item__content">
-                                    <label class="teams-page-item__label" for="team_name_range_2">Команда:</label>
-                                    <input id="team_name_range_2" class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" value="Команда 2" required />
-                                </div>
-                                <div class="teams-page-item__buttons">
-                                    <button class="button teams-page-item__button color-scheme__secondary">Вверх</button>
-                                    <button class="button teams-page-item__button color-scheme__primary">Вниз</button>
-                                </div>
-                            </div>
-                            <div class="teams-page-item page-list__item">
-                                <div class="teams-page-item__content">
-                                    <label class="teams-page-item__label" for="team_name_range_3">Команда:</label>
-                                    <input id="team_name_range_3" class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" required />
-                                </div>
-                                <div class="teams-page-item__buttons hidden">
-                                    <button class="button teams-page-item__button color-scheme__secondary">Вверх</button>
-                                    <button class="button teams-page-item__button color-scheme__primary">Вниз</button>
-                                </div>
-                            </div> 
                         </div>
                     </section>
 
-                    <section id="rules_page" class="body page page_hidden hidden">
+                    <!-- Страница правил -->
+                    <section id="rulesPageElement" class="body page page_hidden hidden">
                         <header class="label-flow body__header body__header_page">
                             <span>Правила</span>
                         </header>
                         <div class="body__main page-list">
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
-                                    <label class="rules-page-item__label" for="seconds_per_round_range">Секунд на раунд:</label>
-                                    <output class="rules-page-item__number" for="seconds_per_round_range">60</output>
+                                    <label class="rules-page-item__label" for="secondsPerRoundRangeElement">Секунд на раунд:</label>
+                                    <output class="rules-page-item__number" for="secondsPerRoundRangeElement">60</output>
                                 </div>
-                                <input id="seconds_per_round_range" class="rules-page-item__range" type="range" min="1" max="120" step="1" value="60" />
+                                <input id="secondsPerRoundRangeElement" class="rules-page-item__range" type="range" min="1" max="120" step="1" value="60" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
-                                    <label class="rules-page-item__label" for="rounds_count_range">Кол-во раундов:</label>
-                                    <output class="rules-page-item__number" for="rounds_count_range">2</output>
+                                    <label class="rules-page-item__label" for="roundsCountRangeElement">Кол-во раундов:</label>
+                                    <output class="rules-page-item__number" for="roundsCountRangeElement">2</output>
                                 </div>
-                                <input id="rounds_count_range" class="rules-page-item__range" type="range" min="1" max="10" step="1" value="2" />
+                                <input id="roundsCountRangeElement" class="rules-page-item__range" type="range" min="1" max="10" step="1" value="2" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
-                                    <label class="rules-page-item__label" for="reward_per_word_range">Награда за угадывание:</label>
-                                    <output class="rules-page-item__number" for="reward_per_word_range">1</output>
+                                    <label class="rules-page-item__label" for="rewardPerWordRangeElement">Награда за угадывание:</label>
+                                    <output class="rules-page-item__number" for="rewardPerWordRangeElement">1</output>
                                 </div>
-                                <input id="reward_per_word_range" class="rules-page-item__range" type="range" min="0" max="5" step="1" value="1" />
+                                <input id="rewardPerWordRangeElement" class="rules-page-item__range" type="range" min="0" max="5" step="1" value="1" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
-                                    <label class="rules-page-item__label" for="penalty_per_word_range">Штраф за пропуск:</label>
-                                    <output class="rules-page-item__number" for="penalty_per_word_range">1</output>
+                                    <label class="rules-page-item__label" for="penaltyPerWordRangeElement">Штраф за пропуск:</label>
+                                    <output class="rules-page-item__number" for="penaltyPerWordRangeElement">1</output>
                                 </div>
-                                <input id="penalty_per_word_range" class="rules-page-item__range" type="range" min="0" max="5" step="1" value="1" />
+                                <input id="penaltyPerWordRangeElement" class="rules-page-item__range" type="range" min="0" max="5" step="1" value="1" />
                             </div>
                         </div>
                     </section>
 
-                    <section id="dicts_page" class="body page page_hidden hidden">
+                    <!-- Страница словарей -->
+                    <section id="dictsPageElement" class="body page page_hidden hidden">
                         <header class="label-flow body__header body__header_page">
                             <span>Словари</span>
                         </header>
                         <div class="body__main page-list">
-                            <div class="dicts-page-item page-list__item">
+                            <div class="dicts-page-item page-list__item hidden">
                                 <div class="dicts-page-content-flow dicts-page-item__content">
                                     <span class="dicts-page-item__name">Название</span>
                                     <span class="dicts-page-item__description">Краткое описание словаря</span>
                                     <div class="label-flow">
                                         <span class="dicts-page-item__tag">1000 слов</span>
                                         <span class="dicts-page-item__tag">Сложность</span>
-                                    </div>
-                                </div>
-                                <button class="button dicts-page-item__button color-scheme__secondary">Выбрать</button>
-                            </div>
-                            <div class="dicts-page-item page-list__item">
-                                <div class="dicts-page-content-flow dicts-page-item__content">
-                                    <span class="dicts-page-item__name">Название</span>
-                                    <span class="dicts-page-item__description">Краткое описание словаря</span>
-                                    <div class="label-flow">
-                                        <span class="dicts-page-item__tag">1000 слов</span>
-                                        <span class="dicts-page-item__tag">Сложность</span>
-                                    </div>
-                                </div>
-                                <button class="button dicts-page-item__button color-scheme__secondary">Выбрать</button>
-                            </div>
-                            <div class="dicts-page-item page-list__item">
-                                <div class="dicts-page-content-flow dicts-page-item__content">
-                                    <span class="dicts-page-item__name">Foobar</span>
-                                    <span class="dicts-page-item__description">Словарь ключевых слов из различных языков программирования</span>
-                                    <div class="label-flow">
-                                        <span class="dicts-page-item__tag">100 слов</span>
-                                        <span class="dicts-page-item__tag">Проф. терминология</span>
                                     </div>
                                 </div>
                                 <button class="button dicts-page-item__button color-scheme__secondary">Выбрать</button>
@@ -228,23 +170,15 @@
 
         <footer class="body__footer body__footer_viewport">
             <address>
-                <span class="text">&#169;KostyanWest</span>
+                <span class="text">&#169;Kostyan West</span>
                 <a href="https://vk.com/kostyanwest">
                     <img class="link-button" src="images/vk_icon.png" alt="vk logo">
                 </a>
                 <a href="https://github.com/KostyanWest">
-                    <img id="github_logo_light" class="link-button" src="images/github_logo_light.png" alt="github logo">
-                    <img id="github_logo_dark" class="link-button hidden" src="images/github_logo_dark.png" alt="github logo">
+                    <img id="lightGithubLogoElement" class="link-button" src="images/github_logo_light.png" alt="github logo">
+                    <img id="darkGithubLogoElement" class="link-button hidden" src="images/github_logo_dark.png" alt="github logo">
                 </a>
             </address>
         </footer>
-        <script>
-            current_nav_btn = nav_btn_play;
-
-            nav_map.set(nav_btn_play, round_page);
-            nav_map.set(nav_btn_teams, teams_page);
-            nav_map.set(nav_btn_settings, rules_page);
-            nav_map.set(nav_btn_dicts, dicts_page);
-        </script>
     </body>
 </html>
