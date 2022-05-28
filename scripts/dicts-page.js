@@ -12,6 +12,7 @@ class DictsPage {
         };
         this.itemTemplate.element.parentNode.removeChild(this.itemTemplate.element);
         this.itemTemplate.element.classList.remove('hidden');
+        this.selectedDictName = '';
         this.selectedWordSet = null;
         this.selectedButtonElement = null;
     }
@@ -44,6 +45,7 @@ class DictsPage {
                     }
                     currentButtonElement.textContent = 'Выбрано';
                     this.selectedButtonElement = currentButtonElement;
+                    this.selectedDictName = dict.name;
                     this.selectedWordSet = new Set(dict.words);
                 }
                 else {
@@ -83,7 +85,7 @@ class DictsPage {
 document.addEventListener('DOMContentLoaded', () => {
     dictsPage = new DictsPage(document.getElementById('dictsPageElement'));
     dictsPage.init([
-        'https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/index.json',
-        'https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/index.json'
+        'https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/index.json',
+        'https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/index.json'
     ]);
 });

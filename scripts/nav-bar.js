@@ -24,7 +24,7 @@ function navButtonClick(event) {
 
 document.addEventListener('DOMContentLoaded', () => {
     activeNavButtonElement = document.getElementById('navPlayButtonElement');
-    navMap.set(document.getElementById('navPlayButtonElement'), document.getElementById('roundPageElement'));
+    navMap.set(document.getElementById('navPlayButtonElement'), document.getElementById('playPageElement'));
     navMap.set(document.getElementById('navTeamsButtonElement'), document.getElementById('teamsPageElement'));
     navMap.set(document.getElementById('navRulesButtonElement'), document.getElementById('rulesPageElement'));
     navMap.set(document.getElementById('navDictsButtonElement'), document.getElementById('dictsPageElement'));

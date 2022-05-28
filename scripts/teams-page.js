@@ -76,6 +76,16 @@ class TeamsPage {
         while (children.length > 0)
             this.element.removeChild(children[0]);
     }
+
+    getTeamNames() {
+        let teamNames = [];
+        this.element.querySelectorAll(':scope input.teams-page-item__text').forEach(input => {
+            const name = input.value;
+            if (name != '')
+                teamNames.push(name);
+        });
+        return teamNames
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

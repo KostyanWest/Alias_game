@@ -8,8 +8,8 @@
         "Легко"
       ],
       "urls": [
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_nouns.json",
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_nouns.json"
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_nouns.json",
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_nouns.json"
       ]
     },
     {
@@ -21,8 +21,8 @@
       ],
       "urls": [
         "rls\": [",
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_adjectives.json",
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_adjectives.json"
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_adjectives.json",
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_adjectives.json"
       ]
     },
     {
@@ -33,8 +33,8 @@
         "Сложно"
       ],
       "urls": [
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_verbs.json",
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_verbs.json"
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/random_verbs.json",
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/random_verbs.json"
       ]
     },
     {
@@ -45,8 +45,8 @@
         "Проф. терминология"
       ],
       "urls": [
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/foobar.json",
-        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/foobar.json"
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/foobar.json",
+        "https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/foobar.json"
       ]
     }
   ]
