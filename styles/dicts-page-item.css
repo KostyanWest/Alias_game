@@ -17,6 +17,7 @@
 }
 
 .dicts-page-item__description {
+    margin: 0.7em 0em;
     font-size: 1.15rem;
 }
 

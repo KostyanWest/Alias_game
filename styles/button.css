@@ -14,7 +14,7 @@
         background-position: 100%;
         padding-left: 0.2em;
         padding-right: 0.6em;
-        transition: all 200ms linear;
+        transition: background 200ms linear, padding 200ms linear;
     }
 
     .button:active {
@@ -28,7 +28,7 @@
         padding: 0.4em;
         color: var(--text-color-contrasted);
         cursor: default;
-        transition: all 200ms linear;
+        transition: background 200ms linear, padding 200ms linear, color 200ms linear;
     }
 
 .color-theme-button {
@@ -40,8 +40,8 @@
     height: 2rem;
 }
 
-/*The buttons' reverse order and the nav-bar's reverse flex-flow are
-  a workaround to squeeze out the "play" button in the "1 above 3" case*/
+/* Обратный порядок кнопок и обратные значения свойства flex-flow -
+    это обходной путь, чтобы поместить кнопку "Играть" вверху в стучае "1 над 3" */
 .nav-bar {
     display: flex;
     flex-flow: row-reverse wrap-reverse;
