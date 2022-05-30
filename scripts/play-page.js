@@ -8,10 +8,15 @@
             alert('Ошибка: Игровые правила не настроены, это похоже на баг :D');
             return;
         }
-        if (dictsPage === null || dictsPage.selectedDictName == '') {
+        if (dictsPage === null || dictsPage.selectedWordSet === null) {
             alert('Ошибка: Выберите словарь для игры');
             return;
         }
-        // TODO
+        gameSession = new GameSession();
+        gameSession.start();
+        document.getElementById('playPageElement').classList.add('page_hidden');
+        setTimeout(() => {
+            document.getElementById('playPageElement').classList.add('hidden');
+        }, 100);
     }
 });

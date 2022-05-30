@@ -6,7 +6,12 @@
     <title>Alias Game</title>
     <script src="scripts/theme.js"></script>
     <script src="scripts/nav-bar.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/round-page.js"></script>
+    <script src="scripts/round-page-deck.js"></script>
+    <script src="scripts/round-result-page.js"></script>
     <script src="scripts/play-page.js"></script>
+    <script src="scripts/game-session.js"></script>
     <script src="scripts/teams-page.js"></script>
     <script src="scripts/rules-page.js"></script>
     <script src="scripts/dicts-page.js"></script>
@@ -44,7 +49,7 @@
                 <div class="central-flow__column">
                     <!-- Обратный порядок кнопок и обратные значения свойства flex-flow -
         это обходной путь, чтобы поместить кнопку "Играть" вверху в стучае "1 над 3" -->
-                    <nav class="nav-bar color-scheme__primary">
+                    <nav id="navBarElement" class="nav-bar color-scheme__primary">
                         <button id="navDictsButtonElement" class="button nav-bar__item">Словари</button>
                         <button id="navRulesButtonElement" class="button nav-bar__item">Правила</button>
                         <button id="navTeamsButtonElement" class="button nav-bar__item">Команды</button>
@@ -53,6 +58,7 @@
                 </div>
                 <div class="central-flow__page">
 
+                    <!-- Страница раунда игры -->
                     <section id="roundPageElement" class="body page page_play-area page_hidden hidden">
                         <header class="label-flow body__header body__header_page">
                             <span>Команда 1</span>
@@ -77,8 +83,8 @@
                     <!-- Страница промежуточных результатов -->
                     <section id="roundResultPageElement" class="body page page_hidden hidden">
                         <header class="label-flow body__header body__header_page">
-                            <span>Кукареки</span>
-                            <span>Раунд 1</span>
+                            <span>Команда 1</span>
+                            <span>0</span>
                         </header>
                         <div class="body__main page-list">
                             <div class="label-flow page-list__item round-result-page-item hidden">
@@ -89,6 +95,9 @@
                                 </div>
                             </div>
                         </div>
+                        <footer class="body__footer page-list">
+                            <button class="button play-page__button color-scheme__secondary" style="align-self: center;">Далее</button>
+                        </footer>
                     </section>
 
                     <!-- Главная страница -->
@@ -102,10 +111,6 @@
                                 <span class="play-page-deck__card" style="--local-color: #00ff90; --local-rotate: rotate(-2deg)"></span>
                                 <span class="play-page-deck__card" style="--local-color: #ffd800; --local-rotate: rotate(-10deg)">Alias game!</span>
                             </div>
-                            <!--<div class="play-page-list">
-                                <span class="play-page-list__item">Кол-во команд: 2</span>
-                                <span class="play-page-list__item">Словарь: Случайные прилагательные</span>
-                            </div>-->
                             <button class="button play-page__button color-scheme__secondary">Начать</button>
                         </div>
                     </section>
@@ -140,14 +145,14 @@
                                     <label class="rules-page-item__label" for="secondsPerRoundRangeElement">Секунд на раунд:</label>
                                     <output class="rules-page-item__number" for="secondsPerRoundRangeElement">60</output>
                                 </div>
-                                <input id="secondsPerRoundRangeElement" class="rules-page-item__range" type="range" min="10" max="120" step="1" value="60" />
+                                <input id="secondsPerRoundRangeElement" class="rules-page-item__range" type="range" min="1" max="120" step="1" value="60" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">
                                     <label class="rules-page-item__label" for="roundsCountRangeElement">Кол-во раундов:</label>
                                     <output class="rules-page-item__number" for="roundsCountRangeElement">2</output>
                                 </div>
-                                <input id="roundsCountRangeElement" class="rules-page-item__range" type="range" min="1" max="10" step="1" value="2" />
+                                <input id="roundsCountRangeElement" class="rules-page-item__range" type="range" min="5" max="10" step="1" value="2" />
                             </div>
                             <div class="rules-page-item page-list__item">
                                 <div class="label-flow">

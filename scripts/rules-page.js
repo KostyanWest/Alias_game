@@ -18,18 +18,22 @@ class RulesPage {
             this.secondsPerRound = parseInt(this.secondsPerRoundRangeElement.value);
             this.secondsPerRoundRangeOutput.textContent = this.secondsPerRoundRangeElement.value;
         }
+        this.secondsPerRound = 60;
         this.roundsCountRangeElement.oninput = (event) => {
             this.roundsCount = parseInt(this.roundsCountRangeElement.value);
             this.roundsCountRangeOutput.textContent = this.roundsCountRangeElement.value;
         }
+        this.roundsCount = 2;
         this.rewardPerWordRangeElement.oninput = (event) => {
             this.rewardPerWord = parseInt(this.rewardPerWordRangeElement.value);
             this.rewardPerWordRangeOutput.textContent = this.rewardPerWordRangeElement.value;
         }
+        this.rewardPerWord = 1;
         this.penaltyPerWordRangeElement.oninput = (event) => {
             this.penaltyPerWord = parseInt(this.penaltyPerWordRangeElement.value);
             this.penaltyPerWordRangeOutput.textContent = this.penaltyPerWordRangeElement.value;
         }
+        this.penaltyPerWord = 1;
     }
 }
 

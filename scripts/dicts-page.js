@@ -12,7 +12,6 @@ class DictsPage {
         };
         this.itemTemplate.element.parentNode.removeChild(this.itemTemplate.element);
         this.itemTemplate.element.classList.remove('hidden');
-        this.selectedDictName = '';
         this.selectedWordSet = null;
         this.selectedButtonElement = null;
     }
@@ -45,7 +44,7 @@ class DictsPage {
                     }
                     currentButtonElement.textContent = 'Выбрано';
                     this.selectedButtonElement = currentButtonElement;
-                    this.selectedDictName = dict.name;
+                    /*this.selectedDictName = dict.name;*/
                     this.selectedWordSet = new Set(dict.words);
                 }
                 else {
