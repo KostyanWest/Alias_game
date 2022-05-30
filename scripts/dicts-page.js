@@ -44,7 +44,6 @@ class DictsPage {
                     }
                     currentButtonElement.textContent = 'Выбрано';
                     this.selectedButtonElement = currentButtonElement;
-                    /*this.selectedDictName = dict.name;*/
                     this.selectedWordSet = new Set(dict.words);
                 }
                 else {

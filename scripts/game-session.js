@@ -23,7 +23,7 @@ class GameSession {
         this.switchPage(document.getElementById('roundResultPageElement'), document.getElementById('roundResultPageElement'));
         setTimeout(() => {
             roundPage.resultPage.init({ name: 'Результаты', score: '' });
-            gameSession.teams.sort(team => -team.score).forEach(team => {
+            gameSession.teams.sort(team => -(team.score)).forEach(team => {
                 roundPage.resultPage.addTeam(team);
             });
             document.getElementById('roundResultPageElement').querySelector(':scope footer button.color-scheme__secondary').onclick = () => {
