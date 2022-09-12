@@ -41,7 +41,6 @@
 .body__footer_viewport {
     border-top: 2px solid var(--text-color);
     padding: 0.2em;
-    height: 2rem;
     font-size: 1.3rem;
     text-align: center;
 }
