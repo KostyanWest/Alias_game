@@ -83,7 +83,7 @@ class DictsPage {
 document.addEventListener('DOMContentLoaded', () => {
     dictsPage = new DictsPage(document.getElementById('dictsPageElement'));
     dictsPage.init([
-        'https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/index.json',
-        'https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/index.json'
+        'https://raw.githubusercontent.com/KostyanWest/Alias_game/main/dicts/index.json',
+        'https://raw.githubusercontent.com/KostyanWest/Alias_game/lab4_5/dicts/index.json'
     ]);
 });
