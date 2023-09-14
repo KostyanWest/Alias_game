@@ -52,10 +52,18 @@
                     <!-- Обратный порядок кнопок и обратные значения свойства flex-flow -
         это обходной путь, чтобы поместить кнопку "Играть" вверху в стучае "1 над 3" -->
                     <nav id="navBarElement" class="nav-bar color-scheme__primary">
-                        <button id="navDictsButtonElement" class="button nav-bar__item">Словари</button>
-                        <button id="navRulesButtonElement" class="button nav-bar__item">Правила</button>
-                        <button id="navTeamsButtonElement" class="button nav-bar__item">Команды</button>
-                        <button id="navPlayButtonElement" class="button nav-bar__item" disabled>Играть</button>
+                        <button id="navDictsButtonElement" class="button nav-bar__item">
+                            <span>Словари</span>
+                        </button>
+                        <button id="navRulesButtonElement" class="button nav-bar__item">
+                            <span>Правила</span>
+                        </button>
+                        <button id="navTeamsButtonElement" class="button nav-bar__item">
+                            <span>Команды</span>
+                        </button>
+                        <button id="navPlayButtonElement" class="button nav-bar__item" disabled>
+                            <span>Играть</span>
+                        </button>
                     </nav>
                 </div>
                 <div class="central-flow__page">
@@ -92,13 +100,19 @@
                             <div class="label-flow page-list__item round-result-page-item hidden">
                                 <span class="round-result-page-item__word">Слово</span>
                                 <div>
-                                    <button class="button round-result-page-item__button color-scheme__secondary">&#10003;</button>
-                                    <button class="button round-result-page-item__button color-scheme__primary">&#10006;</button>
+                                    <button class="button round-result-page-item__button color-scheme__secondary">
+                                        <span>&#10003;</span>
+                                    </button>
+                                    <button class="button round-result-page-item__button color-scheme__primary">
+                                        <span>&#10006;</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                         <footer class="body__footer page-list">
-                            <button class="button play-page__button color-scheme__secondary" style="align-self: center;">Далее</button>
+                            <button class="button play-page__button color-scheme__secondary" style="align-self: center;">
+                                <span>Далее</span>
+                            </button>
                         </footer>
                     </section>
 
@@ -113,7 +127,9 @@
                                 <span class="play-page-deck__card" style="--local-color: #00ff90; --local-rotate: rotate(-2deg)"></span>
                                 <span class="play-page-deck__card" style="--local-color: #ffd800; --local-rotate: rotate(-10deg)">Alias game!</span>
                             </div>
-                            <button class="button play-page__button color-scheme__secondary">Начать</button>
+                            <button class="button play-page__button color-scheme__secondary">
+                                <span>Начать</span>
+                            </button>
                         </div>
                     </section>
 
@@ -129,8 +145,12 @@
                                     <input class="teams-page-item__text" type="text" maxlength="20" placeholder="Новая команда" spellcheck="false" required />
                                 </div>
                                 <div class="teams-page-item__buttons hidden">
-                                    <button class="button teams-page-item__button color-scheme__secondary">Вверх</button>
-                                    <button class="button teams-page-item__button color-scheme__primary">Вниз</button>
+                                    <button class="button teams-page-item__button color-scheme__secondary">
+                                        <span>Вверх</span>
+                                    </button>
+                                    <button class="button teams-page-item__button color-scheme__primary">
+                                        <span>Вниз</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +208,9 @@
                                         <span class="dicts-page-item__tag">Сложность</span>
                                     </div>
                                 </div>
-                                <button class="button dicts-page-item__button color-scheme__secondary">Выбрать</button>
+                                <button class="button dicts-page-item__button color-scheme__secondary">
+                                    <span>Выбрать</span>
+                                </button>
                             </div>
                         </div>
                     </section>
